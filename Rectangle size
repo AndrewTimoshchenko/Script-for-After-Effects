@@ -1,0 +1,11 @@
+Rectangle size:
+
+textLayer = thisComp.layer("textLayer");//наш текстовый слой 
+bbox = textLayer.sourceRectAtTime(time,true);//bounding box вокруг текста 
+[bbox.width*textLayer.scale[0]/100,bbox.height*textLayer.scale[1]/100]+[50,50]
+Position layer:
+textLayer = thisComp.layer("textLayer"); 
+bbox = textLayer.sourceRectAtTime(time,false);
+textLayer.position-textLayer.anchorPoint+
+[bbox.left*textLayer.scale[0]/100,bbox.top*textLayer.scale[1]/100]+
+[bbox.width*textLayer.scale[0]/100,bbox.height*textLayer.scale[1]/100]/2;
